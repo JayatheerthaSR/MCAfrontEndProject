@@ -1,0 +1,1 @@
+redirect ./checkpoint/index.html
