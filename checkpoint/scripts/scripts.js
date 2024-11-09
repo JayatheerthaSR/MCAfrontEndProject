@@ -32,8 +32,9 @@ const setCount = () => textChar.innerText = description.value.length;
 const setDOB = () => {
     let tomSplit = dateIncrement().split('-');
     tomSplit[0] -= 13;
-    const dobMin = tomSplit.join('-');
-    dob.max = dobMin;
+    dob.max = tomSplit.join('-');
+    tomSplit[0] -= 120;
+    dob.min = tomSplit.join('-');
 }
 
 const regValidate = () => {
