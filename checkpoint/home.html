@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="./images/logo.png">
+    <title>TravelTub</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg_dark fixed-top" id="navbar">
+        <a class="navbar-brand" href="#">
+            <img src="./images/logo.png" width="38" height="30" class="d-inline-block align-top" alt="Logo" loading="eager">
+            TravelTub
+        </a>
+        <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" href="#home">Home<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#book">Book</a>
+                <span class="dropdown" id="packages-dropdown">
+                    <a class="nav-link" href="#packages" role="button" data-toggle="dropdown" aria-expanded="false">
+                        Packages
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#paris">Paris</a>
+                        <a class="dropdown-item" href="#rome">Rome</a>
+                        <a class="dropdown-item" href="#swiss">Switzerland</a>
+                        <a class="dropdown-item" href="#london">London</a>
+                        <a class="dropdown-item" href="#southIsland">South Island</a>
+                        <a class="dropdown-item" href="#grandCanyon">Grand Canyon</a>
+                        <a class="dropdown-item" href="#singapore">Singapore</a>
+                        <a class="dropdown-item" href="#dubai">Dubai</a>
+                        <a class="dropdown-item" href="#sydney">Sydney</a>
+                    </div>
+                </span>
+                <a class="nav-link" href="#services">Services</a>
+                <a class="nav-link" href="#gallery">Gallery</a>
+                <a class="nav-link" href="#about">About</a>
+            </div>
+        </div>
+
+        <span class="ml-2">
+            <button type="button" class="btn btn-sm btn-success" data-target="#login" data-toggle="modal" data-dismiss="modal">Login</button>
+            <div class="modal pt-5" id="login" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-center" id="loginModal">Login</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="px-3">
+                                <div class="form-group">
+                                    <label class="sr-only" for="log-email">E-mail</label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">E-mail</div>
+                                        </div>
+                                        <input type="email" class="form-control" id="log-email" placeholder="jane@mail.com" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="log-password">Password</label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">Password</div>
+                                        </div>
+                                        <input type="password" class="form-control" id="log-password" placeholder="********" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+                                            <label class="form-check-label" for="autoSizingCheck">
+                                                Remember me
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto ml-auto">
+                                        <button type="submit" class="btn btn-primary mb-2">Login</button>
+                                    </div>
+                                </div>
+                            </form><hr>
+                            <a class="d-block" href="#">Forgot password?</a>
+                            <span class="d-block">New around here? <a data-target="#register" data-toggle="modal" data-dismiss="modal" href>Sign up</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-secondary btn-sm" data-target="#register" data-toggle="modal" data-dismiss="modal">Register</button>
+            <div class="modal pt-5" id="register" role="dialog" aria-labelledby="registerModal" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-center" id="registerModal">Register</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="px-3">
+                                <div class="form-group">
+                                    <label class="sr-only" for="reg-name">Full Name</label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">Full Name</div>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="John Doe" id="reg-name" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="reg-birth">Date of Birth</label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">D. O. B.</div>
+                                        </div>
+                                        <input type="date" class="form-control" id="reg-birth" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="reg-gender">Gender</label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">Gender</div>
+                                        </div>
+                                        <div id="reg-gender" class="form-control d-flex justify-content-between">
+                                            <span class="form-check">
+                                                <input type="radio" class="form-check-input" name="gender" id="gen-male" required>
+                                                <label for="gen-male" class="form-check-label">Male</label>
+                                            </span>
+                                            <span class="form-check">
+                                                <input type="radio" class="form-check-input" name="gender" id="gen-female">
+                                                <label for="gen-female" class="form-check-label">Female</label>
+                                            </span>
+                                            <span class="form-check">
+                                                <input type="radio" class="form-check-input" name="gender" id="gen-other">
+                                                <label for="gen-other" class="form-check-label">Others</label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="reg-email">E-mail</label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">E-mail</div>
+                                        </div>
+                                        <input type="email" class="form-control"  placeholder="john@mail.com" id="reg-email" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="reg-phone">Contact</label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">Contact</div>
+                                        </div>
+                                        <input type="text" class="form-control"  placeholder="9876543210" id="reg-phone" required>
+                                    </div>
+                                </div>
+                            
+                                <div class="form-group">
+                                    <label class="sr-only" for="reg-password">Password</label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">Password</div>
+                                        </div>
+                                        <input type="password" class="form-control"  placeholder="********" id="reg-password" minlength="8" maxlength="16" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <div class="form-group">
+                                            <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="" id="terms" required>
+                                              <label class="form-check-label" for="terms">
+                                                Agree to terms and conditions
+                                              </label>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <div class="col-auto ml-auto">
+                                        <button type="submit" class="btn btn-primary mb-2" disabled>Register</button>
+                                    </div>
+                                </div>
+                            </form><hr>
+                            <span class="d-block">Already Registered? <a data-target="#login" data-toggle="modal" data-dismiss="modal" href>Login</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </span>
+    </nav>
+
+    <main>
+        <div class="jumbotron-fluid d-flex" id="home">
+            <div class="container text-center text-light align-self-center">
+                <p class="display-5 pb-5">Welcome to <span>TravelTub</span></p>
+                <p class="display-4 pb-5">Visit<br><span id="places" class="places"></span></p>
+                <p class="lead">
+                    <a class="btn bg_dark btn-lg text-light" href="#book" role="button">Book Now</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="container-fluid text-center bg_light m-auto" id="book">
+            <h2 class="col-12 text-center text-light display-5">Book</h2>
+            <div class="row bg_dark container mx-auto mb-5 rounded">
+                <div class="col-md-6 mx-auto my-3">
+                    <img src="./images/forms.jpg" alt="image" class="image-fluid" style=" object-fit: cover" width="100%" height="450rem">
+                </div>
+
+                <div class="col-md-6 text-left m-auto">
+                    <form class="p-3 py-4 rounded text-light m-auto" onsubmit="formSubmit(event)" method="post" style="max-width: 600px;">
+                        <div class="form-group row">
+                            <label for="places-dropdown" class="col-sm-4 col-form-label text-nowrap">Where to :</label>
+                            <div class="col-sm-8">
+                                <select class="custom-select form-control places" id="places-dropdown" name="going-to" required>
+                                    <option class="d-none" disabled hidden selected value="">Select Your Destination</option>
+                                    <option value="paris">Paris</option>
+                                    <option value="rome">Rome</option>
+                                    <option value="swiss">Switzerland</option>
+                                    <option value="london">London</option>
+                                    <option value="southIsland">South Island - New Zealand</option>
+                                    <option value="grandCanyon">Grand Canyon</option>
+                                    <option value="singapore">Singapore</option>
+                                    <option value="dubai">Dubai</option>
+                                    <option value="sydney">Sydney</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                        <label for="numberOfPeople" class="col-sm-4 col-form-label py-0 my-auto">How many <span class="text-nowrap">Person :</span></label>
+                        <div class="col-sm-8 m-auto">
+                                <input type="number" class="form-control" id="numberOfPeople" min="1" max="50" name="num-of-people" required placeholder="3">
+                        </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="startDate" class="col-sm-4 col-form-label text-nowrap">Start Date :</label>
+                            <div class="col-sm-8">
+                                <input type="date" class="form-control" id="startDate" name="start-date" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="endDate" class="col-sm-4 col-form-label text-nowrap">End Date :</label>
+                            <div class="col-sm-8">
+                                <input type="date" class="form-control" id="endDate" name="end-date" disabled required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="description" class="col-sm-4 col-form-label text-nowrap">Description :</label>
+                            <div class="col-sm-8">
+                                <textarea type="date" class="form-control" id="description" name="description" minlength="50" maxlength="500" required placeholder="Describe your travel plan...."></textarea>
+                                <div class="text-dark text-right" style="font-size: small;"><span id="charCount">0</span>/500</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row m-auto">
+                            <div class="m-auto">
+                                <button id="submit" type="submit" class="btn btn-primary col">Book Now</button>
+                            </div>
+                            <div class="m-auto">
+                                <button id="clear" type="reset" class="btn btn-danger col">Clear</button>
+                            </div>
+                        </div>
+                    </form>
+                    <dialog id="formModal" class="text-light text-center w-50 p-2" style="min-width : 300px;">
+                        <h2>Booking Successful<br>Happy vacations!!</h2>
+                        <button type="button" class="btn btn-primary btn-sm mx-auto mt-3" id="ok" autofocus>Great!</button>
+                    </dialog>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container-fluid bg_dark p-4" id="packages">
+            <div class="align-items-center">
+                <h2 class="col-12 text-center text-light display-5">Packages</h2>
+
+                <div class="row container m-auto">
+                    <div class="col-sm-12 col-md-6 col-lg-4 m-auto" id="paris">
+                        <div class="card w-100 mx-auto" style="max-width: 350px; min-width: 285px">
+                            <img class="card-img-top px-2 mt-2 rounded" height="200rem" src="./images/destinations/paris.jpeg" alt="Card image cap">
+                            <div class="card-body text-center">
+                                <h3 class="card-title">Paris</h3>
+                                <p class="card-text text-left" style="height: 6.5rem; overflow-y: scroll;">Key Attractions: Eiffel Tower, Louvre Museum, Arc de Triomphe, Notre Dam-de Paris, Palais Garnier, Musée Odyssey, and Sacré-Cœur.</p>
+                                <span class="card-text d-flex justify-content-between"><h5>Price: </h5><h5>2500 $</h5></span>
+                                <h4 class="card-text">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </h4>
+                                <a href="#book" class="btn btn-secondary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 m-auto" id="rome">
+                        <div class="card w-100 mx-auto" style="max-width: 350px; min-width: 285px">
+                            <img class="card-img-top px-2 mt-2" height="200rem" src="./images/destinations/rome.jpg" alt="Card image cap">
+                            <div class="card-body text-center">
+                                <h3 class="card-title">Rome</h3>
+                                <p class="card-text text-left" style="height: 6.5rem; overflow-y: scroll;">Key Attractions: Colosseum Trevi Fountain, Roman Forum, Pantheon and Vatican Museum.</p>
+                                <span class="card-text d-flex justify-content-between"><h5>Price: </h5><h5>1870 $</h5></span>
+                                <h4 class="card-text">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </h4>
+                                <a href="#book" class="btn btn-secondary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 m-auto" id="swiss">
+                        <div class="card w-100 mx-auto" style="max-width: 350px; min-width: 285px">
+                            <img class="card-img-top px-2 mt-2" height="200rem" src="./images/destinations/swiss.jpg" alt="Card image cap">
+                            <div class="card-body text-center">
+                                <h3 class="card-title">Switzerland</h3>
+                                <p class="card-text text-left" style="height: 6.5rem; overflow-y: scroll;">Key Attractions: Interlaken, Lucerne, Matterhorn, Bern, Lake Geneva, Jungfraujoch, and St. Mortiz</p>
+                                <span class="card-text d-flex justify-content-between"><h5>Price: </h5><h5>2250 $</h5></span>
+                                <h4 class="card-text">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </h4>
+                                <a href="#book" class="btn btn-secondary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 m-auto" id="london">
+                        <div class="card w-100 mx-auto" style="max-width: 350px; min-width: 285px">
+                            <img class="card-img-top px-2 mt-2" height="200rem" src="./images/destinations/london.jpg" alt="Card image cap">
+                            <div class="card-body text-center">
+                                <h3 class="card-title">London</h3>
+                                <p class="card-text text-left" style="height: 6.5rem; overflow-y: scroll;">Key Attractions: Buckingham Palace, Big Ben, Westminster Abbey, Hyde Park, London Tower, National Museum, London Bridge, Madame Tussauds, National Gallery, The British Museum, The Victoria and Albert Museum and Piccadilly Circus and Trafalgar Square. </p>
+                                <span class="card-text d-flex justify-content-between"><h5>Price: </h5><h5>2900 $</h5></span>
+                                <h4 class="card-text">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </h4>
+                                <a href="#book" class="btn btn-secondary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 m-auto" id="southIsland">
+                        <div class="card w-100 mx-auto" style="max-width: 350px; min-width: 285px">
+                            <img class="card-img-top px-2 mt-2" height="200rem" src="./images/destinations/south-island.jpg" alt="Card image cap">
+                            <div class="card-body text-center">
+                                <h3 class="card-title">South Island(NZ)</h3>
+                                <p class="card-text text-left" style="height: 6.5rem; overflow-y: scroll;">Key Attractions: Hike to Mt Cook, bird watching in Stewart Island, Christchurch Street Art Trail, water sports in Queenstown and winery tour in Central Otago.</p>
+                                <span class="card-text d-flex justify-content-between"><h5>Price: </h5><h5>1900 $</h5></span>
+                                <h4 class="card-text">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </h4>
+                                <a href="#book" class="btn btn-secondary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 m-auto" id="grandCanyon">
+                        <div class="card w-100 mx-auto" style="max-width: 350px; min-width: 285px">
+                            <img class="card-img-top px-2 mt-2" height="200rem" src="./images/destinations/grandCanyon.jpg" alt="Card image cap">
+                            <div class="card-body text-center">
+                                <h3 class="card-title">Grand Canyon</h3>
+                                <p class="card-text text-left" style="height: 6.5rem; overflow-y: scroll;">Key Attractions: Jeep safari, zip lining, enjoying the jaw dropping view from Mather Point, Yavapai Observation Station, Desert View Watch Tower, and Mary Colter’s Lookout Studio.</p>
+                                <span class="card-text d-flex justify-content-between"><h5>Price: </h5><h5>1780 $</h5></span>
+                                <h4 class="card-text">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </h4>
+                                <a href="#book" class="btn btn-secondary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 m-auto" id="singapore">
+                        <div class="card w-100 mx-auto" style="max-width: 350px; min-width: 285px">
+                            <img class="card-img-top px-2 mt-2" height="200rem" src="./images/destinations/singapore.jpg" alt="Card image cap">
+                            <div class="card-body text-center">
+                                <h3 class="card-title">Singapore</h3>
+                                <p class="card-text text-left" style="height: 6.5rem; overflow-y: scroll;">Key Attractions: Sentosa Island, Jurong Bird Park, Singapore Zoo, Merlion, Garden by the Bay, Marina Bay and Clarke Quay.</p>
+                                <span class="card-text d-flex justify-content-between"><h5>Price: </h5><h5>1850 $</h5></span>
+                                <h4 class="card-text">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </h4>
+                                <a href="#book" class="btn btn-secondary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 m-auto" id="dubai">
+                        <div class="card w-100 mx-auto" style="max-width: 350px; min-width: 285px">
+                            <img class="card-img-top px-2 mt-2" height="200rem" src="./images/destinations/dubai.jpg" alt="Card image cap">
+                            <div class="card-body text-center" height="300rem">
+                                <h3 class="card-title">Dubai</h3>
+                                <p class="card-text text-left" style="height: 6.5rem; overflow-y: scroll;">Key Attractions: Burj Khalifa, Jumeirah Beach, Mall of the Emirates, Gold Souk, Dubai Mall, Spice Souk, Wild Wadi, Burj Al Arab, Dubai Creek, Dubai Marina, and Dubai Aquarium.</p>
+                                <span class="card-text d-flex justify-content-between"><h5>Price: </h5><h5>2300 $</h5></span>
+                                <h4 class="card-text">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </h4>
+                                <a href="#book" class="btn btn-secondary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 m-auto" id="sydney">
+                        <div class="card w-100 mx-auto" style="max-width: 350px; min-width: 285px">
+                            <img class="card-img-top px-2 mt-2" height="200rem" src="./images/destinations/sydney.jpg" alt="Card image cap">
+                            <div class="card-body text-center">
+                                <h3 class="card-title">Sydney</h3>
+                                <p class="card-text text-left" style="height: 6.5rem; overflow-y: scroll;">Key Attractions: Sydney Opera House, Harbour Bridge, Sydney Tower, The Anzac War Memorial, and Queen Victoria Building.</p>
+                                <span class="card-text d-flex justify-content-between"><h5>Price: </h5><h5>1690 $</h5></span>
+                                <h4 class="card-text">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </h4>
+                                <a href="#book" class="btn btn-secondary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container-fluid text-left m-auto bg_light" id="services">
+            <h2 class="text-center display-5 text-light">Services</h2>
+            <div id="carouselservices" class="carousel slide container w-75" data-ride="carousel" style="max-width: 700px;">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselservices" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselservices" data-slide-to="1"></li>
+                  <li data-target="#carouselservices" data-slide-to="2"></li>
+                  <li data-target="#carouselservices" data-slide-to="3"></li>
+                  <li data-target="#carouselservices" data-slide-to="4"></li>
+                  <li data-target="#carouselservices" data-slide-to="5"></li>
+                </ol>
+                <div class="carousel-inner d-flex align-items-center bg_dark rounded" style="height: 13rem">
+                  <div class="carousel-item active">
+                    <img class="d-block w-75 m-auto" src="./images/services/hotel.png" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-75 m-auto" src="./images/services/food.png" alt="Second slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-75 m-auto" src="./images/services/cabs.png" alt="Third slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-75 m-auto" src="./images/services/selfRide.png" alt="Fourth slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-75 m-auto" src="./images/services/safetyGuide.png" alt="Fifth slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-75 m-auto" src="./images/services/insurance.png" alt="Sixth slide">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselservices" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselservices" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+        </div>
+
+        <div class="container-fluid m-auto bg_dark" id="gallery">
+            <h2 class="text-center display-5 text-light">Gallery</h2>
+
+            <div class="">
+                <div id="carouselgallery" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner p-3 m-auto">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 col-lg-4 m-auto pb-3">
+                                <img class="img-fluid rounded" alt="Gallery-image" src="./images/destinations/south-island.jpg">
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4 m-auto pb-3">
+                                <img class="img-fluid rounded" alt="Gallery-image" src="./images/destinations/swiss.jpg">
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4 m-auto pb-3">
+                                <img class="img-fluid rounded" alt="Gallery-image" src="./images/destinations/singapore.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 col-lg-4 m-auto pb-3">
+                                <img class="img-fluid rounded" alt="Gallery-image" src="./images/destinations/london.jpg">
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4 m-auto pb-3">
+                                <img class="img-fluid rounded" alt="Gallery-image" src="./images/destinations/paris.jpeg">
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4 m-auto pb-3">
+                                <img class="img-fluid rounded" alt="Gallery-image" src="./images/destinations/sydney.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 col-lg-4 m-auto pb-3">
+                                <img class="img-fluid rounded" alt="Gallery-image" src="./images/destinations/grandCanyon.jpg">
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4 m-auto pb-3">
+                                <img class="img-fluid rounded" alt="Gallery-image" src="./images/destinations/rome.jpg">
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4 m-auto pb-3">
+                                <img class="img-fluid rounded" alt="Gallery-image" src="./images/destinations/dubai.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                
+
+                <div class="container-fluid text-right">
+                    <a class="btn btn-primary" href="#carouselgallery" role="button" data-slide="prev">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                    <a class="btn btn-primary btn-lg" href="#carouselgallery" role="button" data-slide="next">
+                        <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row container-fluid text-center m-auto pb-3" id="about">
+            <h2 class="text-center display-5 text-light col-12">About Us</h2>
+            <div class="col-md-6 m-auto ">
+                <img src="./images/logo.png" alt="image" class="w-50" style="max-width: 350px;">
+            </div>
+
+            <div class="col-md-6 text-left m-auto bg_light p-3 rounded">
+                <div class="d-flex flex-column flex-md-row">
+                    <div class="col-md-6 d-flex flex-column">
+                        <h3 class="">Our Offices</h3>
+                        <p> Located across the globe, ready to assist in planning &amp; booking your perfect vacation. </p>
+                    </div>
+                    <div class="col-md-6 d-flex flex-column">
+                        <h3 class="d-flex">Write to us</h3>
+                        <p>Be it an enquiry, feedback or a simple suggestion, write to us.</p>
+                        <a href="mailto:contact@traveltub.com" class="d-md-inline-block">contact@traveltub.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="d-flex flex-wrap justify-content-between align-items-center bg_dark">
+        <div class="col-md-6 d-flex align-items-center">
+          <a href="#" class="mb-2 me-2 mb-md-0 text-muted text-decoration-none lh-1 px-2">
+            <img type="icon" src="./images/logo (2).png" width="38" height="30" class="d-inline-block align-top" alt="Logo" loading="lazy">
+          </a>
+          <span class="mb-2 mb-md-0 text-light px-2">&#169;</span>
+          <span class="mb-2 mb-md-0 text-light px-2">All Rights Reserved</span>
+        </div>
+    
+        <ul class="nav col-md-6 justify-content-end list-unstyled d-flex">
+          <p class="mt-2 text-light nav-link">Follow us</p>
+          <li class="ms-2"><a class="text-light nav-link" href=""><i class="fa-brands fa-square-facebook"></i></a></li>
+          <li class="ms-2"><a class="text-light nav-link" href=""><i class="fa-brands fa-x-twitter"></i></a></li>
+          <li class="ms-2"><a class="text-light nav-link" href=""><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+    </footer>
+
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="./scripts/scripts.js"></script>
+</body>
+</html>

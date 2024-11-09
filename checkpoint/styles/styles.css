@@ -1,0 +1,145 @@
+:root {
+    --bg_light    : #abd7ebc0;
+    --bg_dark     : #03489dc0;
+    --bg_hover    : #03489d;
+    --rating      : #ff9e2f;
+    --text_shadow : #000000;
+    --text_light  : #ffffff;
+}
+
+* {
+    font-family         : "Exo 2", sans-serif;
+    font-optical-sizing : auto;
+    font-weight         : 600;
+    font-style          : normal;
+    transition          : ease-in-out 0.5s;
+}
+
+.bg_dark {
+    background-color: var(--bg_dark);
+}
+
+.bg_light {
+    background-color: var(--bg_light);
+}
+
+/*navbar position padding*/
+main {
+    margin-top : 60px;
+}
+
+a {
+    cursor          : pointer;
+    text-decoration : none;
+}
+
+#home, #book, #services, #gallery, #about {
+    padding-bottom  : 60px;
+}
+
+#home, #book, #services, #gallery, #about,  #paris, #rome, #swiss, #london, #southIsland, #grandCanyon, #singapore, #dubai, #sydney {
+    margin-top  : -60px;
+    padding-top : 60px;
+}
+/*navbar padding end*/
+
+#home {
+    height: 100vh;
+}
+
+/*page scrollbar design*/
+::-webkit-scrollbar             { width: 8px; }
+::-webkit-scrollbar-track       { background: var(--bg_light); }
+::-webkit-scrollbar-thumb       { background: var(--bg_hover);
+                                  border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--bg_dark); }
+/*scrollbar design end*/
+
+.dropdown:hover > .dropdown-menu {
+    display          : block;
+    background-color : var(--bg_light);
+}
+
+body {
+    background            : var(--bg_light) url("../images/homeBg.jpg") no-repeat center ;
+    background-size       : cover;
+    background-attachment : fixed;
+}
+
+#home, h2 {
+    text-shadow: 2px 0 var(--text_shadow),    -2px 0 var(--text_shadow),    0 2px var(--text_shadow),     0 -2px var(--text_shadow),
+                 1px 1px var(--text_shadow),  -1px -1px var(--text_shadow), 1px -1px var(--text_shadow),  -1px 1px var(--text_shadow);
+}
+
+    
+@keyframes places {
+    11.1% { content: "Rome";          color: #FF5500; }
+    22.2% { content: "Switzerland";   color: #FFAA00; }
+    33.3% { content: "London";        color: #FFFF00; }
+    44.4% { content: "South Island";  color: #AAFF00; }
+    55.5% { content: "Grand Canyon";  color: #00FF00; }
+    66.6% { content: "Singapore";     color: #00AAFF; }
+    77.7% { content: "Dubai";         color: #0055FF; }
+    88.8% { content: "Sydney";        color: #AA00FF; }
+}
+
+.places:after {
+    content   : "Paris";
+    color     : #FF0000;
+    animation : places 1.8s infinite;
+}
+
+.display-5 {
+    font-size : xx-large;
+}
+
+#packages i {
+    color : var(--rating);
+}
+
+/*textarea scrollbar design*/
+#description::-webkit-scrollbar             { width: 6px; }
+#description::-webkit-scrollbar-track       { background: var(--input_bg);  }
+#description::-webkit-scrollbar-thumb       { background: var(--bg_dark); 
+                                              border-radius: 3px; }
+#description::-webkit-scrollbar-thumb:hover { background: var(--bg_hover); }
+/*scrollbar design end*/
+
+dialog, .modal-content {
+    background-color : var(--bg_light);
+    border-radius    : 10px;
+    border-color     : var(--bg_dark);
+}
+
+.card-text::-webkit-scrollbar { 
+    display: none;
+}
+
+footer i {
+    font-size: xx-large;
+}
+
+#gallery img:hover {
+    transform: scale(1.05);
+}
+
+.input-group-text {
+    width: 7rem;
+}
+
+.modal-backdrop {
+    position: relative;
+}
+
+.modal {
+    background-color: var(--bg_dark);
+}
+
+.input-group-text {
+    background-color : var(--bg_dark);
+    color            : var(--text_light);
+}
+
+.img-fluid {
+    aspect-ratio: calc(16/9);
+}
