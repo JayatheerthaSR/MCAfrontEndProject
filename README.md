@@ -1,6 +1,6 @@
 Hello there!!
 
 This repo consists of my academic minor project.
-Thanks for your Interest.
+Thank your for your Interest.
 
 Happy browsing!!!
